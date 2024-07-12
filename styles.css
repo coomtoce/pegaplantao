@@ -1,0 +1,81 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #0044cc;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 1rem;
+    padding-bottom: 100px; /* Espaço extra para o footer */
+}
+
+h2 {
+    color: #0044cc;
+}
+
+form {
+    margin-bottom: 1rem;
+}
+
+.plantonista {
+    margin-bottom: 1rem;
+}
+
+button {
+    margin-right: 1rem;
+    padding: 0.5rem;
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0033aa;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: #f4f4f4;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-left: 4px solid #0044cc;
+}
+
+ul li.destaque {
+    border-left: 4px solid red;
+    font-weight: bold;
+    color: #0044cc;
+}
+
+footer {
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Defina uma altura fixa */
+}
+
+#resultado-cadastro-reserva div {
+    margin-bottom: 1rem;
+}
+
+#resultado-cadastro-reserva p {
+    font-weight: bold;
+}

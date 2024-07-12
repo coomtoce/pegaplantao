@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regras para cumprimento de Escalas de Plantão</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Regras para cumprimento de Escalas de Plantão</h1>
+    </header>
+    <main>
+        <section id="regras">
+            <h2>Proposta de Regras aprovada em AGE 01.07.24</h2>
+            <ol>
+                <li>Sorteio trimestral (1ª Etapa): O sorteio trimestral ocorre como de costume, respeitando-se a “regra do pego”.</li>
+                <br>
+                <li>Sorteio Mensal (2ª Etapa): Os 15 maiores plantonistas do sorteio anterior têm direito de escolha de até 6 plantões por mês, não podendo ocupar previamente mais que 60% da escala total de plantões dos 3 Frotinhas, dando direito aos demais interessados de pelo menos 40% de sobra. Se após todas as etapas listadas a seguir (3a a 6a Etapas), reste sobra, os 15 maiores plantonistas podem ocupar até 100% da escala.</li>
+                <br>
+                <li>3ª Etapa: Os plantonistas eventualmente acionados na escala de reserva do mês anterior, que tenham cumprido plantões através desse mecanismo, têm direito de escolha de até 4 plantões por mês, após aplicação da 2a Etapa. Não havendo sido utilizado o cadastro de reserva para o mês anterior, segue-se à próxima etapa.</li>
+                <br>
+                <li>4ª Etapa: Preenche-se a escala por sorteio, ordem de disponibilidade, preferência e adesão voluntária. Caso a escala tenha-se preenchido completa, encerra-se o algoritmo.</li>
+                <br>
+                <li>5ª Etapa: Restando ainda assim algum plantão descoberto, serão oferecidos, em forma de sorteio, turnos de plantão para os ortopedistas alocados em cirurgias eletivas, alinhando cada turno de cirurgia eletiva (12h) com a obrigatoriedade de preenchimento de 1 plantão de pronto- atendimento (12h), limitados ao máximo de dois plantões por mês. Caso o cooperado que fizer cirurgia eletiva deseje mais que 2 plantões, ele tem as mesmas prerrogativas dos demais cooperados.</li>
+                <br>
+                <li>6ª Etapa: Após aplicação das etapas anteriores, e, ainda assim, restando vacância de preenchimento de escala, aplicar-se-á a 6a Etapa.
+                    <br>
+                    - A 6a Etapa dar-se-á pela composição de cadastro 15 plantonistas reservas, entre todos os cooperados plantonistas (que já deram plantão pela SMS) no último ano.
+                    <br>
+                    - Comporão o grupo de cadastro de reserva 1, os 15 plantonistas que menos ocuparam a escala de plantões no mês definido em que se delimitou o cadastro de reserva.
+                    <br> <br>
+                    <hr>
+                    Ex: Para o mês de julho de 2024, foram reconhecidos 59 cooperados que prestaram serviços junto à SMS. Os 59 cooperados que trabalharam com a SMS, foram divididos em 4 grupos: <br>
+                    • Cadastro de reserva 1: os 15 cooperados que menos ocuparam plantões. Atuarão em JULHO de 2024.  <br>
+                    • Cadastro de reserva 2: os 15 cooperados que ocuparam o segundo quartil em ocupação de plantão. Atuarão em AGOSTO de 2024. <br>
+                    • Cadastro de reserva 3: os 15 cooperados que ocuparam o terceiro quartil em ocupação de plantão. Atuarão em SETEMBRO de 2024. <br> 
+                    • Cadastro de reserva 4: os 14 cooperados que mais ocuparam plantões. Atuarão em OUTUBRO de 2024. <br> <hr> <br>
+                    - O rodízio entre os grupos de cadastro de reserva foi sugerido e aprovado em Assembleia. 
+                    - Ao fim de outubro (considerando o exemplo citado para entendimento), ocorrerão nova avaliação e definição dos grupos de cadastro de reservas para os meses seguintes. O raciocínio seguirá após rodízio completo entre os grupos de cadastro de reserva, de forma análoga ao supracitado. <br>
+                    - Compostos os grupos de cadastro de reserva, serão questionadas as preferências e possibilidades dos plantonistas reservas em relação à ordem de preferência de plantões. Serão anotadas 4 possibilidades em ordem de escolha de quatro possíveis plantões (12h). Não haverá distinção entre Enfermaria, Ambulatório ou Porta de Atendimento, ficando o cooperado reserva disponível para a vacância necessária ao preenchimento. <br>
+                    - Haverá preferência em acionar plantonistas reservas que tenham acusado preferência e/ou disponibilidade de acordo com o dia e turno de plantão informado. <br>
+                    - Na ocasião da necessidade de se preencher um plantão reserva em data não acusada por nenhum dos componentes do cadastro de reserva (desejada pelo plantonista reserva), a cooperativa sorteará, entre os plantonistas do grupo reserva do mês, os plantonistas necessários para cumprimento da escala. Plantões em que não há médicos e plantões de Pronto Atendimento (porta) terão prioridade de preenchimento.</li>
+            </ol>
+        </section>
+        <section id="cadastro-plantonistas">
+            <h2>Cadastro de Plantonistas</h2>
+            <div id="plantonistas-container">
+                <div class="plantonista">
+                    <label for="nome">Nome do Plantonista:</label>
+                    <input type="text" id="nome" required>
+                    <label for="plantoes">Total de Plantões:</label>
+                    <input type="number" id="plantoes" required>
+                    <button type="button" id="add-plantonista">+</button>
+                </div>
+            </div>
+            <button type="button" id="ordenar-plantonistas">Ordenar</button>
+        </section>
+        <section id="resultados">
+            <h2>Resultados</h2>
+            <ul id="lista-plantonistas"></ul>
+            <div id="legenda"></div>
+            <label for="vacancia-plantoes">Qual a vacância de plantões durante a etapa 2?</label>
+            <input type="number" id="vacancia-plantoes" required>
+            <button type="button" id="calcular-disponibilidade">Calcular Disponibilidade</button>
+            <span id="resultado-imediato"></span>
+            <p id="resultado-disponibilidade"></p>
+        </section>
+        <section id="cadastro-reserva">
+            <h2>Cadastro de Reserva</h2>
+            <label for="total-cooperados">Qual a quantidade total de plantonistas no período considerado?</label>
+            <input type="number" id="total-cooperados" required>
+            <button type="button" id="gerar-cadastro-reserva">Gerar Cadastro de Reserva</button>
+            <div id="resultado-cadastro-reserva"></div>
+        </section>
+    </main>
+    <footer>
+        <p>CNPJ: 03.182.684/0001-88</p>
+        <p>Av. Desembargador Moreira, 2020 – Sala 911 – Aldeota CEP: 60170-002 – Fortaleza, Ceará</p>
+        <p>Tel. 3051-1627 | <a href="http://www.coomtoce.org.br" target="_blank">www.coomtoce.org.br</a></p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
