@@ -79,10 +79,8 @@ footer {
     color: #333;
     text-align: center;
     padding: 1rem;
-    position: fixed;
-    bottom: 0;
+    position: relative;
     width: 100%;
-    height: 60px; /* Defina uma altura fixa */
     border-top: 1px solid #ddd;
 }
 
@@ -114,10 +112,15 @@ section {
 @media (max-width: 600px) {
     main {
         padding: 1rem;
+        padding-bottom: 100px; /* Espaço extra para o footer em dispositivos móveis */
     }
 
     button {
         width: 100%;
         margin-bottom: 1rem;
+    }
+
+    ul li {
+        padding: 1rem;
     }
 }
